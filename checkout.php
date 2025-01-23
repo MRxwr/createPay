@@ -232,7 +232,7 @@ width: 25px;
 					</table>
 					<div class="row mt-2 text-center">
 					<?php
-					if ( $paymentStatus == 0 || $paymentStatus == 4){
+					if ( $paymentStatus == 0 ){
 					?>
 						<!-- Pending -->
 						<div class="col-12 text-left mb-3">
@@ -446,14 +446,14 @@ width: 25px;
 						<img src="https://i.imgur.com/UcGoyWT.png" style="width:50px;height:50px"> <b>Refuned Successfully.</b>
 						</div>
 						<?php
-					}/*elseif( $paymentStatus == 4 ){
+					}elseif( $paymentStatus == 4 ){
 						?>
 						<!-- Expired -->
 						<div class="col text-center">
 						<img src="https://i.imgur.com/ItoEbKW.png" style="width:50px;height:50px"> <b>Expired Invoice.</b>
 						</div>
 						<?php
-					}*/
+					}
 					?>
 					</div>
 				</div>
