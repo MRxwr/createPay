@@ -46,7 +46,7 @@ if ( $paymentMethod == 2 ){
 }
 
 $postMethodLines = array(
-"endpoint" 				=> "PaymentRequestExicuteForStore",
+"endpoint" 				=> "PaymentRequestExcuteNew2024",
 "apikey" 				=> "{$PaymentAPIKey}",
 "PaymentMethodId" 		=> "{$paymentMethod}",
 "CustomerName"			=> "{$name}",
@@ -60,7 +60,6 @@ $postMethodLines = array(
 "ErrorUrl"				=> 'https://createpay.link/checkout.php?status=fail'
 );
 
-echo json_encode($postMethodLines);die();
 ####### Execute payment ###### 
 for( $i =0; $i < 10; $i++){
 	$curl = curl_init();
