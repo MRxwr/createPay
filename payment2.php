@@ -60,6 +60,21 @@ $postMethodLines = array(
 "ErrorUrl"				=> 'https://createpay.link/checkout.php?status=fail'
 );
 
+$postMethodLines = array(
+	"endpoint" 				=> "PaymentRequestExcuteNew2024", // "ForStore" was  
+	"apikey" 				=> $PaymentAPIKey,
+	"PaymentMethodId" 		=> $paymentMethod,
+	"CustomerName"			=> "{$name}",
+	"DisplayCurrencyIso"	=> "KWD", 
+	"MobileCountryCode"		=> "+965", 
+	"CustomerMobile"		=> substr($mobile,0,11),
+	"CustomerEmail"			=> $email,
+	"invoiceValue"			=> (float)$price,
+	"SourceInfo"			=> '',
+	"CallBackUrl"			=> 'https://createpay.link/checkout.php',
+	"ErrorUrl"				=> 'https://createpay.link/checkout.php?error=3',
+);
+
 ####### Execute payment ###### 
 for( $i =0; $i < 10; $i++){
 	$curl = curl_init();
