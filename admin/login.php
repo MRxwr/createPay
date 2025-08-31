@@ -1,5 +1,5 @@
 <?php
-require ("includes/config.php");die();
+require ("includes/config.php");
 
 if ( isset($_COOKIE["CreateKWA"]) )
 {
