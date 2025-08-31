@@ -46,7 +46,7 @@ if ( $paymentMethod == 2 ){
 }
 
 $postMethodLines = array(
-"endpoint" 				=> "PaymentRequestExcuteNew2024",
+"endpoint" 				=> "PaymentRequestExicuteForStore",
 "apikey" 				=> "{$PaymentAPIKey}",
 "PaymentMethodId" 		=> "{$paymentMethod}",
 "CustomerName"			=> "{$name}",
@@ -58,21 +58,6 @@ $postMethodLines = array(
 "SourceInfo"			=> '',
 "CallBackUrl"			=> 'https://createpay.link/checkout.php',
 "ErrorUrl"				=> 'https://createpay.link/checkout.php?status=fail'
-);
-
-$postMethodLines = array(
-	"endpoint" 				=> "PaymentRequestExcuteNew2024", // "ForStore" was  
-	"apikey" 				=> $PaymentAPIKey,
-	"PaymentMethodId" 		=> $paymentMethod,
-	"CustomerName"			=> "{$name}",
-	"DisplayCurrencyIso"	=> "KWD", 
-	"MobileCountryCode"		=> "+965", 
-	"CustomerMobile"		=> substr($mobile,0,11),
-	"CustomerEmail"			=> $email,
-	"invoiceValue"			=> (float)$price,
-	"SourceInfo"			=> '',
-	"CallBackUrl"			=> 'https://createpay.link/checkout.php',
-	"ErrorUrl"				=> 'https://createpay.link/checkout.php?error=3',
 );
 
 ####### Execute payment ###### 
@@ -93,7 +78,7 @@ for( $i =0; $i < 10; $i++){
 	$response = curl_exec($curl);
 	curl_close($curl);
 	$resultMY = json_decode($response, true);
-	echo json_encode($resultMY);die();
+	//echo json_encode($resultMY);die();
 
 	if(isset($resultMY["data"]["InvoiceId"])){
 		$orderId = $resultMY["data"]["InvoiceId"];
