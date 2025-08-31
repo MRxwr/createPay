@@ -60,6 +60,7 @@ $postMethodLines = array(
 "ErrorUrl"				=> 'https://createpay.link/checkout.php?status=fail'
 );
 
+echo json_encode($postMethodLines);die();
 ####### Execute payment ###### 
 for( $i =0; $i < 10; $i++){
 	$curl = curl_init();
@@ -67,7 +68,7 @@ for( $i =0; $i < 10; $i++){
 				'Content-Type:application/json'
 			];
 	curl_setopt_array($curl, array(
-	  CURLOPT_URL => 'https://createapi.link/api/v2/index.php',
+	  CURLOPT_URL => 'https://createapi.link/api/v3/index.php',
 	  CURLOPT_RETURNTRANSFER => true,
 	  CURLOPT_MAXREDIRS => 10,
 	  CURLOPT_POST => 1,
@@ -78,7 +79,7 @@ for( $i =0; $i < 10; $i++){
 	$response = curl_exec($curl);
 	curl_close($curl);
 	$resultMY = json_decode($response, true);
-	echo json_encode($resultMY);die();
+	//echo json_encode($resultMY);die();
 
 	if(isset($resultMY["data"]["InvoiceId"])){
 		$orderId = $resultMY["data"]["InvoiceId"];
