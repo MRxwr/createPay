@@ -26,7 +26,7 @@ if ( isset($_GET["LinkId"]) ) {
 		$paymentStatus = $row["status"];
 		$supplierRef = $row["sRef"]; 
 	}else{
-		header("LOCATION: index.html");die();
+		header("LOCATION: index.html?error=link");die();
 	}
 }elseif( isset($_GET["paymentId"]) || isset($_GET["OrderID"]) ){
 	if( isset($_GET["paymentId"]) ) {
