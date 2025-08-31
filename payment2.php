@@ -48,6 +48,7 @@ if ( $paymentMethod == 2 ){
 $postMethodLines = array(
 "endpoint" 				=> "PaymentRequestExicuteForStore",
 "apikey" 				=> "{$PaymentAPIKey}",
+"PaymentMethodId" 		=> "{$paymentMethod}",
 "CustomerName"			=> "{$name}",
 "DisplayCurrencyIso"	=> "KWD", 
 "MobileCountryCode"		=> "+965", 
